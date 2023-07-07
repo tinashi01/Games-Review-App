@@ -3,7 +3,6 @@ class GamesController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     
     def index
-        # games = Game.all
         games = Game.find_by(user_id: session[:user_id])
 
         if games
