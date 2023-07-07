@@ -3,11 +3,7 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-
-  # only needed for postman testing
-  get "/games", to: "games#index"
-  post "/new", to: "games#create"
-
+  
   # nested resource routing since we want the user to be logged in to view more
   # commented out for postman testing
   resources :users, only: [:show] do
