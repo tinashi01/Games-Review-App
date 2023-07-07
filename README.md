@@ -1,5 +1,5 @@
 ## Introduction
-This is the backend service built with Ruby on Rails. This is an online game store in which prices and reviews of the games and compare the between other games.
+This is the backend service built with Ruby on Rails. This is an online game store for price and review comparison.
 
 ## Installation
 <!-- First execute to download dependencies:
