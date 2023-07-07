@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
-    protect_from_forgery with: :null_session
+    skip_before_action :verify_authenticity_token
+    # protect_from_forgery with: :null_session
     # commented for testing with postman
-    # before_action :authorized
+    before_action :authorized
 
-    # def authorized
-    #     return render json: { error: "Not Authorized" }, status: :unauthorized unless session.include? :user_id
-    # end
+    def authorized
+        return render json: { error: "Not Authorized" }, status: :unauthorized unless session.include? :user_id
+    end
 end

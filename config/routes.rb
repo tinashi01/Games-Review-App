@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
   # only needed for postman testing
   get "/games", to: "games#index"
+  post "/new", to: "games#create"
 
   # nested resource routing since we want the user to be logged in to view more
+  # commented out for postman testing
   resources :users, only: [:show] do
     resources :games, only: [:index, :show, :create, :update, :destroy]
   end

@@ -1,32 +1,35 @@
 class GamesController < ApplicationController
+    wrap_parameters format: []
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+    
     def index
-        games = Game.all
-        render json: games, status: :ok
+        # games = Game.all
+        games = Game.find_by(user_id: session[:user_id])
+
+        if games
+            render json: games, status: :ok
+        else
+            render json: { games: []}
+        end
     end
 
     def create
-        game = Game.create(game_params)
+        game = Game.create(name: params[:name], image_url: params[:image_url], review: params[:review], rating: params[:rating], user_id: session[:user_id])
 
         if game.valid?
             render json: game, status: :created
         else
-            render json: {error: game.errors}, status: :unprocessable_entity
+            render json: {error: "Error in creating game"}, status: :unprocessable_entity
         end
     end
-
-    # def show 
-    #     game = Game.find(params[:id])
-    #     render json: game, include: :user
-    # end
     
-    def update
-        game = Game.find(params[:id])
+    # def update
+    #     game = Game.find(params[:id])
 
-        game.update!(game_params)
+    #     game.update!(game_params)
 
-        render json: game
-    end
+    #     render json: game
+    # end
 
     def destroy
         game = Game.find_by(id: params[:id])
@@ -45,8 +48,8 @@ class GamesController < ApplicationController
         render json: { error: "Game not found"}, status: :not_found 
     end
 
-    def game_params
-        params.permit(:name, :image_url, :review, :rating)
-    end
+    # def game_params
+    #     params.permit(:name, :image_url, :review, :rating)
+    # end
 
 end

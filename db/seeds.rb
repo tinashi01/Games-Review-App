@@ -8,8 +8,6 @@
 
 puts "Seeding..."
 
-
-
 User.create([{
     username: 'tinashi',  
     password: '123', 
