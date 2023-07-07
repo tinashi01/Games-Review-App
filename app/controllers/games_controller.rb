@@ -23,13 +23,13 @@ class GamesController < ApplicationController
         end
     end
     
-    # def update
-    #     game = Game.find(params[:id])
+    def update
+        game = Game.find(params[:id])
 
-    #     game.update!(game_params)
+        game.update!(game_params)
 
-    #     render json: game
-    # end
+        render json: game
+    end
 
     def destroy
         game = Game.find_by(id: params[:id])
@@ -48,8 +48,8 @@ class GamesController < ApplicationController
         render json: { error: "Game not found"}, status: :not_found 
     end
 
-    # def game_params
-    #     params.permit(:name, :image_url, :review, :rating)
-    # end
+    def game_params
+        params.permit(:user_id, :id, :name, :image_url, :review, :rating)
+    end
 
 end
