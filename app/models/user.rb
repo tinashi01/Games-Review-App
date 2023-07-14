@@ -3,5 +3,6 @@ class User < ApplicationRecord
     validates :username, presence: true, uniqueness: true
     validates :gamertag, presence: true, uniqueness: true, length: {minimum: 2}
     validates :bio, length: {maximum: 250}
-    has_many :games
+    has_many :reviews
+    has_many :games, through: :reviews
 end

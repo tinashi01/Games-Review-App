@@ -1,19 +1,35 @@
 class GamesController < ApplicationController
-    wrap_parameters format: []
-    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     
-    def index
-        games = Game.find_by(user_id: session[:user_id])
+    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+    skip_before_action :authorized, only: :index
 
-        if games
-            render json: games, status: :ok
+    before_action :admin_user, only: [:create, :update, :destroy]
+
+    def index
+        # if statement for if viewing all games or specific game
+
+        if params[:game_id]
+            games = Game.find_by(id: params[:game_id])
         else
-            render json: { games: []}
+            games = Game.all
         end
+        render json: games
+        # games = Game.find_by(user_id: session[:user_id])
+
+        # if games
+        #     render json: games, status: :ok
+        # else
+        #     render json: { games: []}
+        # end
     end
 
+    # def show
+    #     game = Game.find(params[:id])
+    #     render json: game
+    # end
+
     def create
-        game = Game.create(name: params[:name], image_url: params[:image_url], review: params[:review], rating: params[:rating], user_id: session[:user_id])
+        game = Game.create(name: params[:name], image_url: params[:image_url], review: params[:review], rating: params[:rating])
 
         if game.valid?
             render json: game, status: :created
@@ -48,7 +64,7 @@ class GamesController < ApplicationController
     end
 
     def game_params
-        params.permit(:user_id, :id, :name, :image_url, :review, :rating)
+        params.permit(:id, :name, :image_url, :review, :rating)
     end
 
 end
