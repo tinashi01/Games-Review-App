@@ -14,19 +14,9 @@ class GamesController < ApplicationController
             games = Game.all
         end
         render json: games
-        # games = Game.find_by(user_id: session[:user_id])
 
-        # if games
-        #     render json: games, status: :ok
-        # else
-        #     render json: { games: []}
-        # end
     end
 
-    # def show
-    #     game = Game.find(params[:id])
-    #     render json: game
-    # end
 
     def create
         game = Game.create(name: params[:name], image_url: params[:image_url], review: params[:review], rating: params[:rating])
