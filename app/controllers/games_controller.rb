@@ -17,6 +17,11 @@ class GamesController < ApplicationController
 
     end
 
+    def show
+        game = Game.find(params[:id])
+        render json: game
+    end
+
 
     def create
         game = Game.create(name: params[:name], image_url: params[:image_url], review: params[:review], rating: params[:rating])
@@ -35,6 +40,9 @@ class GamesController < ApplicationController
 
         render json: game
     end
+
+    # archived list of games
+    # not deleting the record
 
     def destroy
         game = Game.find_by(id: params[:id])

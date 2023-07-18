@@ -8,9 +8,14 @@ Rails.application.routes.draw do
   # resources :games, only: [:index]
   # resources :reviews, only: [:index]
 
-  resources :games, only: [:index] do
-    resources :reviews, only: [:index]
-  end
+  # :show
+  # add show method for ind. game
+  # games/1/reviews
+
+  # resources :games, only: [:show] do
+  #   resources :reviews, only: [:index]
+  # end
+
   
   # nested resource routing since we want the user to be logged in to do more
 
@@ -21,8 +26,10 @@ Rails.application.routes.draw do
 
   # admin user routing
 
+  # add show method
 
-  resources :games, only: [:create, :update, :destroy]
+
+  resources :games, only: [:show, :index, :create, :update, :destroy]
 
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
