@@ -3,18 +3,6 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  # get "/reviews", to: "reviews#index"
-
-  # resources :games, only: [:index]
-  # resources :reviews, only: [:index]
-
-  # :show
-  # add show method for ind. game
-  # games/1/reviews
-
-  # resources :games, only: [:show] do
-  #   resources :reviews, only: [:index]
-  # end
 
   
   # nested resource routing since we want the user to be logged in to do more
@@ -25,9 +13,6 @@ Rails.application.routes.draw do
   end
 
   # admin user routing
-
-  # add show method
-
 
   resources :games, only: [:show, :index, :create, :update, :destroy]
 
