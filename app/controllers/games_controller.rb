@@ -24,7 +24,7 @@ class GamesController < ApplicationController
 
 
     def create
-        game = Game.create(name: params[:name], image_url: params[:image_url], review: params[:review], rating: params[:rating])
+        game = Game.create(name: params[:name], image_url: params[:image_url])
 
         if game.valid?
             render json: game, status: :created
@@ -62,7 +62,7 @@ class GamesController < ApplicationController
     end
 
     def game_params
-        params.permit(:id, :name, :image_url, :review, :rating)
+        params.permit(:id, :name, :image_url)
     end
 
 end
