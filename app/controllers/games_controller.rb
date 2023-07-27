@@ -2,6 +2,7 @@ class GamesController < ApplicationController
     
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     skip_before_action :authorized, only: :index
+    skip_before_action :authorized, only: :show
 
     before_action :admin_user, only: [:create, :update, :destroy]
 

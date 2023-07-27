@@ -38,4 +38,17 @@ puts "Seeding..."
 #     review: 'Mostly Positive', 
 #     rating: '86'}])
 
+#  t.string "comment"
+# t.string "rating"
+# t.integer "user_id", null: false
+# t.integer "game_id", null: false
+
+# Review.create([{
+#     heading: "cool game",
+#     comment: "very nice game",
+#     rating: "4",
+#     user_id: "1",
+#     game_id: "1"
+# }])
+
 puts "Seeding done."
