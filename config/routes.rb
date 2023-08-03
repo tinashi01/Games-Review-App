@@ -12,12 +12,15 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :create, :update, :destroy]
   end
 
+  resources :users, only: [:show] do
+    resources :favourite_games, only: [:index, :create, :destroy]
+  end
   # admin user routing
 
   resources :games, only: [:show, :index, :create, :update, :destroy]
 
   resources :games, only: [:show] do
-    resources :reviews, only: [:index]
+    resources :reviews, only: [:index, :create]
   end
 
   

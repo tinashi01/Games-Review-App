@@ -5,4 +5,6 @@ class User < ApplicationRecord
     validates :bio, length: {maximum: 250}
     has_many :reviews
     has_many :games, through: :reviews
+    has_many :favourite_games
+
 end

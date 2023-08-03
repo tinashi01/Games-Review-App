@@ -13,12 +13,19 @@ function Logout () {
         })
         .then(r => console.log("logout successful"))
         .then(() => {
+            
             navigate("/")
+            window.location.reload(true)
         })
     }
 
     return (
-       <button className="logout" onClick={logoutUser}>Logout</button> 
+        <div className="logout-options">
+           <h2>Are you sure you want to logout?</h2>
+           <p>Yes, I still want to <button className="logout" onClick={logoutUser}>Logout</button></p>
+           
+        </div>
+       
     )
 }
 

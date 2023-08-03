@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
         else
             reviews = Review.all
         end
-        render json: reviews, include: :user
+        render json: reviews, include: :game
 
     end
 
@@ -42,7 +42,6 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-
         review = Review.find_by(id: params[:id])
 
         if review

@@ -1,3 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&family=Raleway:ital@1&family=Shantell+Sans:wght@300;400&display=swap');
+
+body {
+  text-align: center;
+  padding: 10px;
+  /* font-family: sans-serif; */
+  font-family: 'Kanit';
+  background-image: url("https://img.freepik.com/free-vector/abstract-realistic-technology-particle-background_52683-33064.jpg?w=1380&t=st=1691049877~exp=1691050477~hmac=dc210f0244447b29f5621cf517cf2efad9fcbf1b6ad23150ef7d20f496dc028e");
+  background-size:cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 5px 10px;
+}
+/* 
+li.review {
+
+} */
+
+form.create-review {
+  text-align: left;
+  display: inline-block;
+}
+
+button {
+  font-family: 'Kanit';
+}
+
+input {
+  font-family: 'Kanit';
+}
+
+
+
+.game-card {
+  
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  border-radius: 5px; */
+  padding: 2px 16px;
+  
+}
+
+.game-column:hover {
+  box-shadow: 0 4px 8px 0 rgb(250, 249, 249);
+}
+
+.game-image {
+  border-radius: 5px 5px 0 0;
+}
+
+.game-column {
+
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* transition: 0.3s; */
+  /* float: left;
+  width: 300px; */
+  /* border-radius: 5px; */ 
+  /* padding: 15px; */
+  /* display: inline-block; */
+  /* float: left;
+  width: 29%; */
+  
+  transition: 0.3s;
+  width: 20%;
+  border-radius: 5px;
+  padding: 10px 0px;
+  
+  margin: 30px;
+  display: inline-block;
+  background-color: rgba(211, 211, 211, 0.61);
+}
+
+.delete-button {
+  float: left;
+}
+
+/*  */
+
+
+
+
+
+/* .star-rating.button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #000;
+}
+.off {
+  color: #ccc;
+} */
+
+.reviews-wrapper {
+  float: left;
+  width: 50%;
+}
+.leave-review {
+  float: right;
+  width: 50%;
+}
+
+.stars{
+  margin-left: auto;
+  margin-right: auto;
+  width: 7em
+}
+
+.reviewed-games {
+  float: left;
+  width: 50%;
+  
+}
+
+
+.favourited-games {
+  float: right;
+  width: 50%;
+  
+}
+
+/* .label {
+  border-radius: 4px;
+  padding: 0.2em 0.6em;
+  border: 1px solid #009ce2;
+  background-color: #00acff;
+  color: #fff;
+  font-size: 0.8em;
+} */
+
+.user-review {
+  display: inline-block;
+  /* width: 200px;
+  height: 300px; */
+  transition: 0.3s;
+  width: 30%;
+  height: 300px;
+  border-radius: 5px;
+  padding: 10px 0px;
+  
+  white-space: initial;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  margin: 30px;
+  display: inline-block;
+  background-color: rgba(211, 211, 211, 0.61);
+}
+
+.favourites-list {
+  display: inline-block;
+}
+
+.favourites {
+  margin-right: 10px;
+  padding: 20px 0px 50px;
+}
+
+.banner {
+  margin: 20px;
+  /* float: left; */
+}
+
+nav > a {
+
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  /* color: blue; */
+  font-weight: 500;
+  /* text-shadow: 0 0 3px yellow, 0 0 5px yellow; */
+  /* display: block; */
+  color: white;
+}
+
+nav {
+  position: relative;
+  
+}
+
+nav > div {
+  float: right;
+  
+}
+
+.user-image {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  /* box-shadow: 0 0 0 5px white; */
+  /* background-color: darkgray; */
+}
+
+.favourites-list li {
+  counter-increment: my-awesome-counter;
+}
+
+.favourites-list li::before {
+  content: counter(my-awesome-counter) ". ";
+  padding: 0px 30px 0 0;
+}
+
+
+
+
+
+
+
 /* .App {
   text-align: center;
 }

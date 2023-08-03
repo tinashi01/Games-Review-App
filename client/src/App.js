@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
@@ -9,33 +9,60 @@ import Logout from './components/Logout';
 import Dashboard from './components/Dashboard';
 import ViewGame from './components/ViewGame';
 import NoUserFound from './components/NoUserFound';
+import Deals from './components/Deals';
+import AdminDashboard from './components/AdminDashboard';
+import './App.css'
 
 
 
 function App() {
-  // fetch games
-  
-    
+  // fetch games from API
+  const [user, setUser] = useState([]);
+  // const [admin, setAdmin] = useState(false);
+  // const [faves, setFaves] = useState([]);
+    // const {id} = useParams();
 
-    
+  // useEffect(() => {
+  //     fetch(`/users/${user.id}/favourite_games`)
+  //         .then(r => r.json())
+  //         .then(json => setFaves(json))
+  // }, [user.id])
 
+  useEffect(() => {
+      fetch("/me")
+          .then(r => r.json())
+          .then(json => setUser(json))
+  }, [])
 
-  // maybe can create a secondary navbar for dashboard that if logged in, 
-  // shows that one instead
   return (
     <Router>
       <React.Fragment>
-        <Navbar />
+        <Navbar user={user}/>
         <Routes >
+
+          {/* public  */}
           <Route exact path="/" element = {<Home />} />
-          <Route path="/games" element = {<GamesList/>}/>
+          <Route path="/games" element = {<GamesList user={user}/>}/>
+          <Route path="/games/:id" element = {<ViewGame me={user}/>}/>
+          <Route path="/error" element = {<NoUserFound/>}/>
+
+
+          {/* public but to disappear after logged in */}
           <Route path="/signup" element = {<SignUp/>}/>
           <Route path="/login" element = {<Login />}/>
+          
+          {/* logged in users only */}
+
+          <Route path="/dashboard" element = {<Dashboard user={user}/>}/>
+          <Route path='/dashboard/deals' element = {<Deals user={user}/>}></Route>
           <Route path="/logout" element = {<Logout />}/>
-          <Route path="/games/:id" element = {<ViewGame />}/>
-          {/* get rid of navbar when in dashboard */}
-          <Route path="/dashboard" element = {<Dashboard/>}/>
-          <Route path="/error" element = {<NoUserFound/>}/>
+          
+          
+
+          {/* admin user */}
+          <Route path="/admin" element = {<AdminDashboard/>}/>
+
+          {/* {admin ? <Route path="/admin" element = {<AdminDashboard/>}/> : null} */}
         </Routes>
       </React.Fragment>
     </Router>

@@ -42,9 +42,9 @@ function SignUp() {
                 <label htmlFor="gamertag">Gamertag:</label>
                 <input type="text" id="gamertag" value={gamertag} placeholder="Enter gamertag aka your public display name" onChange={e => setGamertag(e.target.value)} required></input><br></br>
                 <label htmlFor="password">Create Password:</label>
-                <input type="text" id="password" value={password} placeholder="Create Password" onChange={e => setPassword(e.target.value)} required></input><br></br>
+                <input type="password" id="password" value={password} placeholder="Create Password" onChange={e => setPassword(e.target.value)} required></input><br></br>
                 <label htmlFor="confirmation">Confirm Password:</label>
-                <input type="text" id="confirmation" value={confirmation} placeholder="Confirm Password" onChange={e => setConfirmation(e.target.value)} required></input><br></br>
+                <input type="password" id="confirmation" value={confirmation} placeholder="Confirm Password" onChange={e => setConfirmation(e.target.value)} required></input><br></br>
                 <button type="submit" onClick={() => console.log("User created successfully")}>Submit</button>
             </form>
         </section>

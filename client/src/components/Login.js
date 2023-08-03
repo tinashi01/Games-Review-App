@@ -20,7 +20,9 @@ function Login() {
         })
         .then(r => r.json())
         .then(() => {
+            
             navigate("/dashboard")
+            window.location.reload(true)
         })
     }
 
@@ -31,7 +33,7 @@ function Login() {
                 <label htmlFor="username">Username:</label>
                 <input type="text" id="username" value = {username} placeholder="Enter Username" onChange={e => setUsername(e.target.value)}></input>
                 <label htmlFor="password">Password:</label>
-                <input type="text" id="password" value = {password} placeholder="Enter Password" onChange={e => setPassword(e.target.value)}></input>
+                <input type="password" id="password" value = {password} placeholder="Enter Password" onChange={e => setPassword(e.target.value)}></input>
                 <button type="submit" onClick={() => console.log("User logged in successfully")}>Login</button>
             </form>
         </section>
