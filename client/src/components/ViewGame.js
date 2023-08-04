@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ReviewList from './ReviewList';
 import Game from './Game';
 import GameRating from './GameRating';
-import EditGame from './EditGame';
+
 
 function ViewGame ({me}) {
     const [reviews, setReviews] = useState([]);
@@ -14,11 +14,16 @@ function ViewGame ({me}) {
             .then(r => r.json())
             .then(json => setReviews(json))
     }, [id])
+    
+
+    // function showEdit () {
+    //     return <EditGame/>
+    // }
 
     return (
         <React.Fragment>
             <Game/>
-            <EditGame/>
+            
             <GameRating reviews={reviews} />
             
             <ReviewList me={me} reviews={reviews}/>

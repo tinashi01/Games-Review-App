@@ -21,7 +21,7 @@ function Logout () {
 
     return (
         <div className="logout-options">
-           <h2>Are you sure you want to logout?</h2>
+           <h2>❌ Are you sure you want to logout?</h2>
            <p>Yes, I still want to <button className="logout" onClick={logoutUser}>Logout</button></p>
            
         </div>

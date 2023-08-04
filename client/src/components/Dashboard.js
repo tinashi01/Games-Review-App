@@ -21,7 +21,7 @@ function Dashboard({user}) {
         <p className='user-username'>{user.username}</p>
       </div> */}
         
-        <h1>Dashboard</h1>
+        <h1>🖥️ Dashboard</h1>
         <h3>Welcome {user.gamertag}</h3>
         <div className="reviewed-games">
           <h2>✍️ Reviews</h2>

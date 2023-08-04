@@ -28,11 +28,11 @@ function Login() {
 
     return (
         <section className="login-section">
-            <h1>Login</h1>
+            <h1>🔑 Login</h1>
             <form className="login" onSubmit={loginUser}>
-                <label htmlFor="username">Username:</label>
+                <label htmlFor="username">Username</label>
                 <input type="text" id="username" value = {username} placeholder="Enter Username" onChange={e => setUsername(e.target.value)}></input>
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="password">Password</label>
                 <input type="password" id="password" value = {password} placeholder="Enter Password" onChange={e => setPassword(e.target.value)}></input>
                 <button type="submit" onClick={() => console.log("User logged in successfully")}>Login</button>
             </form>

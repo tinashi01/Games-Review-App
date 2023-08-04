@@ -15,18 +15,11 @@ import './App.css'
 
 
 
+
 function App() {
   // fetch games from API
   const [user, setUser] = useState([]);
-  // const [admin, setAdmin] = useState(false);
-  // const [faves, setFaves] = useState([]);
-    // const {id} = useParams();
-
-  // useEffect(() => {
-  //     fetch(`/users/${user.id}/favourite_games`)
-  //         .then(r => r.json())
-  //         .then(json => setFaves(json))
-  // }, [user.id])
+  
 
   useEffect(() => {
       fetch("/me")
@@ -35,38 +28,40 @@ function App() {
   }, [])
 
   return (
-    <Router>
-      <React.Fragment>
-        <Navbar user={user}/>
-        <Routes >
+    <>
+      
+      <Router>
+        <React.Fragment>
+          <Navbar user={user}/>
+          <Routes >
 
-          {/* public  */}
-          <Route exact path="/" element = {<Home />} />
-          <Route path="/games" element = {<GamesList user={user}/>}/>
-          <Route path="/games/:id" element = {<ViewGame me={user}/>}/>
-          <Route path="/error" element = {<NoUserFound/>}/>
+            {/* public  */}
+            <Route exact path="/" element = {<Home />} />
+            <Route path="/games" element = {<GamesList user={user}/>}/>
+            <Route path="/games/:id" element = {<ViewGame me={user}/>}/>
+            <Route path="/error" element = {<NoUserFound/>}/>
 
 
-          {/* public but to disappear after logged in */}
-          <Route path="/signup" element = {<SignUp/>}/>
-          <Route path="/login" element = {<Login />}/>
-          
-          {/* logged in users only */}
+            {/* public but to disappear after logged in */}
+            <Route path="/signup" element = {<SignUp/>}/>
+            <Route path="/login" element = {<Login />}/>
+            
+            {/* logged in users only */}
 
-          <Route path="/dashboard" element = {<Dashboard user={user}/>}/>
-          <Route path='/dashboard/deals' element = {<Deals user={user}/>}></Route>
-          <Route path="/logout" element = {<Logout />}/>
-          
-          
+            <Route path="/dashboard" element = {<Dashboard user={user}/>}/>
+            <Route path='/dashboard/deals' element = {<Deals user={user}/>}></Route>
+            <Route path="/logout" element = {<Logout />}/>
+            
+            
 
-          {/* admin user */}
-          <Route path="/admin" element = {<AdminDashboard/>}/>
+            {/* admin user */}
+            <Route path="/admin" element = {<AdminDashboard/>}/>
 
-          {/* {admin ? <Route path="/admin" element = {<AdminDashboard/>}/> : null} */}
-        </Routes>
-      </React.Fragment>
-    </Router>
-  
+            {/* {admin ? <Route path="/admin" element = {<AdminDashboard/>}/> : null} */}
+          </Routes>
+        </React.Fragment>
+      </Router>
+    </>
 
   )
 }
