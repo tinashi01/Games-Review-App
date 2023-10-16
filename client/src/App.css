@@ -101,6 +101,21 @@ form > button {
   padding: 0 15px 0 5px;
 } */
 
+.game-info {
+  background-color: rgba(211, 211, 211, 0.61);
+  margin: auto;
+  padding: 0 5px 5px;
+  width: 30%;
+
+  border-radius: 5px;
+
+}
+
+.individual-game-image {
+  height: 50px;
+  width: 150px;
+  border-radius: 5px 5px;
+}
 
 
 .game-card {
@@ -118,7 +133,7 @@ form > button {
 }
 
 .game-image {
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px;
 }
 
 .game-column {
@@ -212,15 +227,19 @@ form > button {
 
 .favourites-list {
   display: inline-block;
-  border-radius: 5px;
-  padding: 10px 30px;
-  background-color: rgba(211, 211, 211, 0.61);
+  
+  
   
 }
 
 .favourites {
   margin-right: 10px;
-  padding: 20px 0px 50px;
+  /* padding: 20px 0px 50px; */
+  border-radius: 5px;
+  padding: 20px 30px;
+  margin: 30px;
+  display: inline-block;
+  background-color: rgba(211, 211, 211, 0.61);
 }
 
 
@@ -281,50 +300,15 @@ nav {
   padding: 0px 30px 0 0;
 }
 
-
-
-
-
-
-
-
-/* .App {
-  text-align: center;
+.no-game-image {
+  height: 45px;
+  width: 120px;
+  border-radius: 5px 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.no-individual-game-image {
+  height: 45px;
+  width: 120px;
+  border-radius: 5px 5px;
 }
 
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

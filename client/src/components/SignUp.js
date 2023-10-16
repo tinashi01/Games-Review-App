@@ -8,6 +8,7 @@ function SignUp() {
     const [gamertag, setGamertag] = useState("");
     const [password, setPassword] = useState("");
     const [confirmation, setConfirmation] = useState("");
+    const [register, setRegister] = useState(false)
 
     const navigate = useNavigate();
 
@@ -25,7 +26,7 @@ function SignUp() {
         })
         .then(r => r.json())
         .then(()=> {
-            navigate("/login");
+            setRegister(true)
         })
     }
 
@@ -47,6 +48,8 @@ function SignUp() {
                 <input type="password" id="confirmation" value={confirmation} placeholder="Confirm Password" onChange={e => setConfirmation(e.target.value)} required></input>
                 <button type="submit" onClick={() => console.log("User created successfully")}>Submit</button>
             </form>
+            {register ? <h4>Sign Up Successful</h4> : null}
+            {register ? <button onClick={() => navigate("/login")}>Login Here</button> : null}
         </section>
     )
 

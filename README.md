@@ -2,9 +2,13 @@
 This is the backend service built with Ruby on Rails. This is an online game store in which a user can view games, the prices and reviews, once they are logged in.
 
 ## Installation
-Run server:
+Run backend server:
     
     $ rails s
+
+In another terminal, to view client:
+
+    $ npm start --prefix client
 
 
 ## Contributing

@@ -5,19 +5,18 @@ import ReactStars from 'react-stars';
 
 function ReviewList({me, reviews}) {
     
-    
+    reviews = reviews.sort((review1, review2) => review2.created_at.localeCompare(review1.created_at))
 
     // to do: add upvote/downvotes
     return (
         <React.Fragment>      
             <div className="reviews-wrapper">
                 <h3>📝 User Reviews</h3>
-                {!me.id && <p>Please signup/Login to leave reviews.</p> }
                 <ul className = 'reviews-list'>
                 {reviews.map((review) => {
                     return (
-                        <div className='review-wrapper'>
-                            <li className = "review" key={review.id}>
+                        <div className='review-wrapper' key={review.id}>
+                            <li className = "review" >
                                 <h4>{review.user.gamertag} says: {review.heading}</h4>
                                 <p>"{review.comment}"</p>                           
                                 <ReactStars
@@ -38,6 +37,10 @@ function ReviewList({me, reviews}) {
                 {/* if me.id exists render leaveReview */}
             <div className = "leave-review">
                 { me.id && <LeaveReview me={me} reviews={reviews}/> }
+                {!me.id && <div className="reviewed">
+                                <h3 style={{textDecoration: 'line-through'}}>✏️ Leave your Review:</h3>
+                                <p>Please signup/login to leave reviews.</p>
+                            </div>}
             </div>
         </React.Fragment>        
         
