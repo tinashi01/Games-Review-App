@@ -1,0 +1,2 @@
+module FavouriteGamesHelper
+end
