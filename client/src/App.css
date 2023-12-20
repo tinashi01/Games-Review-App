@@ -133,6 +133,7 @@ form > button {
 }
 
 .game-image {
+  height: 200px;
   border-radius: 5px 5px;
 }
 

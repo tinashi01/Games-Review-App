@@ -55,7 +55,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "faker", "~> 2.17"
-<<<<<<< HEAD
-
-=======
->>>>>>> d0cc8cc2570e36f4fa9e588c490264c241bc02b2
